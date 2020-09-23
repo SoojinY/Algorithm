@@ -1,23 +1,26 @@
-def d(n):
-    num = n
-    self = 0
-    while num > 0:
-        self += num % 10
-        num = int(num / 10)
-    self += n
+command = input()
+command = command.split(" ")
 
-    return self
+N = int(command[0])
+K = int(command[1])
 
+josephus = []
+for i in range(N):
+    josephus.append(0)
 
-self_num = dict()
+index = 0
+count = 0
+order = []
 
-for i in range(1, 10000):
-    n = d(i)
-    while 10000 > n > 0:
-        if str(n) not in self_num:
-            self_num[str(n)] = n
-        n = d(n)
+while 0 in josephus:
+    if josephus[index] < 1:
+        if count < K-1:
+            count += 1
+        else:
+            josephus[index] = 1
+            count = 0
+            order.append(index + 1)
+    index += 1
+    index %= N
 
-for i in range(1, 10000):
-    if str(i) not in self_num:
-        print(i)
+print(order)
