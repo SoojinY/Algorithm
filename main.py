@@ -25,4 +25,10 @@ while 0 in josephus:
     if index < 1:
         index += N
 
-print(order)
+print('<',end="")
+for i in range(len(order)):
+    print(order[i],end="")
+    if i<len(order)-1:
+        print(', ',end="")
+
+print('>')
