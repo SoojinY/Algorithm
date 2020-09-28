@@ -3,7 +3,7 @@ from collections import deque
 
 edit = deque(sys.stdin.readline())  # given string as deque
 edit.pop()
-window = len(edit)
+window = len(edit) # length from start to cursor
 
 
 def left():
