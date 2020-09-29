@@ -6,15 +6,14 @@ que = deque()
 opNum = int(sys.stdin.readline())
 for i in range(opNum):
     op = sys.stdin.readline().split()
-    print(op)
     if op[0] == 'push':
         que.append(int(op[1]))
     else:
         if op[0] == 'pop':
             if que:
-                out = -1
-            else:
                 out = que.popleft()
+            else:
+                out = -1
         elif op[0] == 'size':
             out = len(que)
         elif op[0] == 'empty':
@@ -35,4 +34,3 @@ for i in range(opNum):
             else:
                 out = -1
         sys.stdout.write(str(out)+'\n')
-    print(que)
