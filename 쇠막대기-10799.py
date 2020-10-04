@@ -1,5 +1,4 @@
 import sys
-import collections
 
 command = sys.stdin.readline().strip('\n')
 rod = 0
